@@ -15,7 +15,13 @@
 
 > Plus any styling necessary using `sx` prop.
 
-### Court Forms Section
+## Section styling
+
+Take note of the way sections are organized on the root/index page. Try to implement it using the same or similar components. It will probably look different from the current design, but it will make it easier to move to a more unified style later.
+
+The main difference is that the home page has each major section in a different "paper" component, whereas the Get Started page uses dividers. Design currently prefers the paper/card look.
+
+## Court Forms Section
 
 There's some code existing for this. The Grid component may need to be adjusted for proper breakpoints. But the basic idea is to put the content in the `/content/get-started.js` file inside the `courtForms` array.
 
