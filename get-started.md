@@ -1,30 +1,39 @@
 # Get Started
 
-![card](assets/card-1.png)
+This Page walks users through 4 steps using the calculator
+
+Each of the 4 Steps uses a GetStartedCard Paper component in a SectionContainer component with the id of the step:
+
 
 ```jsx
-// Initial thoughts on how this might
-// be built -
 
-<Paper>
-  <img/>
-  <MuiMarkdown>{content}<MuiMarkdown>
-</Paper>
+<SectionContainer id="step-#">
+  <GetStartedStep
+    title="STEP TITLE"
+    bodyText="STEP BODY TEXT" // Accepts a markdown string
+    ctaText='Access Calculator'
+    ctaLink='/calculator/landing-0'
+    >
+
+      {children}
+
+  </GetStartedStep>
+</SectionContainer>
 
 ```
 
 > Plus any styling necessary using `sx` prop.
 
-## Section styling
+## Reusable Components
 
-Take note of the way sections are organized on the root/index page. Try to implement it using the same or similar components. It will probably look different from the current design, but it will make it easier to move to a more unified style later.
+- All text uses MuiMarkdown
+- The FactCard Component is used in Steps 1 & 3
+- The accordion builder is used in Steps 1 & 4
+- The CTA button and link are only used currently in Step 2
+- Each Standalone child component is itself wrapped in a SectionContainer component to maintain consistent spacing
 
-The main difference is that the home page has each major section in a different "paper" component, whereas the Get Started page uses dividers. Design currently prefers the paper/card look.
+## Content
 
-## Court Forms Section
+- content is pulled from /content/get-started.js
 
-There's some code existing for this. The Grid component may need to be adjusted for proper breakpoints. But the basic idea is to put the content in the `/content/get-started.js` file inside the `courtForms` array.
 
-The `details` property takes in a Markdown string.
-
-As a sidenote, the "Vacation packet from Northwest Justice Project" link is broken, so we'll need to find a new link or resource for this.
